@@ -1,0 +1,35 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+
+
+{% for category in categories %}
+{% if category.id == category_id %} 
+{% endif %}
+<a href="{% url 'category' %}?query={{ query }}&category={{ category.id }}"><button class="btn btn-primary m-2">{{ category.name }}</button></a>
+
+{% endfor %}
+
+
+{% for listing in listings %}
+{% if not listing.sold %}
+
+<div class="row row cols-2 row-cols-md-3 g-4 py-5">
+  <div class ="col">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{ listing.image_url }}" alt="Card img">
+      <div class="card-body">
+          <a href="{% url 'listing' listing.id %}"> 
+          <h5 class="card-title">{{ listing.title }}</h5></a>
+          <p class="card-text">{{ listing.description }}</p> 
+          <p class="card-text">Price: <strong>${{ listing.starting_bid }}</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endif %}          
+{% endfor %}
+
+      
+{% endblock %}
