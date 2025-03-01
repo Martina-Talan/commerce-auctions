@@ -13,7 +13,7 @@ def index(request):
     if request.method == 'GET':
         return render(request, "auctions/index.html",{
             "listings": Listing.objects.all(),   
-     })
+        })
 
 def login_view(request):
     if request.method == "POST":
