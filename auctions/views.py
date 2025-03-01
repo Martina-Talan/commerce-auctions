@@ -10,10 +10,11 @@ from .models import User, Listing, Category, Bids, Comment
 
 
 def index(request):
-    if request.method == 'GET':
-        return render(request, "auctions/index.html",{
-            "listings": Listing.objects.all(),   
-        })
+    listings = Listing.objects.all()
+
+    return render(request, "auctions/index.html", {  
+        "listings": listings
+    })
 
 def login_view(request):
     if request.method == "POST":
