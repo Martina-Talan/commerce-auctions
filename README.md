@@ -91,3 +91,16 @@ Open the app in your browser: http://127.0.0.1:8000/
 | GET    | `/watchlist` | Retrieve the user’s watchlist |
 | POST   | `/watchlist/<int:listing_id>` | Add/remove a listing from the watchlist |
 
+---
+
+### 🛠️ Technologies Used
+- __Django__ – Backend framework
+- __JavaScript__  – Dynamic UI updates
+- __HTML & CSS__ – Frontend structure and styling
+- __Bootstrap__ – Responsive design
+
+---
+
+### 🏆 Acknowledgments
+This project is part of the Harvard CS50W: Web Programming with Python and JavaScript course.
+
