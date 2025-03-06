@@ -10,7 +10,7 @@ Commerce is an online auction web application built with Django and JavaScript. 
 
 ---
 
-## 🚀 Features
+### 🚀 Features
 
 **User Authentication** – Register and log in to manage listings and bids.
 
@@ -32,9 +32,48 @@ Commerce is an online auction web application built with Django and JavaScript. 
 
 ---
 
-## 🛠️ Installation & Setup
+### 🛠️ Installation & Setup
 
-### Clone the repository:
+#### Clone the repository:
 ```sh
 git clone https://github.com/Martina-Talan/commerce.git
 cd commerce
+```
+#### Install dependencies:
+```sh
+pip install -r requirements.txt
+```
+#### Apply database migrations:
+```sh
+python manage.py makemigrations auctions
+python manage.py migrate
+```
+#### Create a superuser (optional for admin access):
+```sh
+python manage.py createsuperuser
+```
+#### Start the development server:
+```sh
+python manage.py runserver
+```
+Open the app in your browser: http://127.0.0.1:8000/
+
+---
+
+### 📌 Usage
+
+1️⃣ **Register/Login** – Create an account and sign in.
+
+2️⃣ **Create & Manage Listings** – Start auctions with a title, description, and image.
+
+3️⃣ **Place Bids** – Submit bids higher than the current price.
+
+4️⃣ **Watchlist** – Add listings to a watchlist for easy access.
+
+5️⃣ **Comment on Listings** – Engage by commenting on auction pages.
+
+6️⃣ **Browse by Category** – View all active auctions by category.
+
+7️⃣ **Close Auctions** – Listing creators can close auctions and declare a winner.
+
+---
