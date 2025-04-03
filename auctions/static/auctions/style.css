@@ -1,0 +1,268 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: rgb(198, 194, 190);
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    color: rgb(255, 255, 255);
+    padding: 1.875rem;
+    border-radius: 10.625;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 37.5rem;
+    width: 90%;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+}
+
+.nav .nav-link {
+    color: rgb(49, 47, 47);
+    font-weight: bold;
+    font-size: 1.25rem;
+    transition: color 0.3s ease-in-out;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: rgb(28, 27, 27);
+    text-underline-offset: 0.625rem;
+    margin: 1.25rem;
+}
+
+div {
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+}
+
+/* Listings */
+.listing-grid, .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+  
+.listing-card, .card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.625rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+  
+.listing-card:hover, .card:hover {
+  transform: scale(1.03);
+}
+  
+.listing-card img, .card-body img{
+  width: 100%;
+  height: 12.5rem;
+  object-fit: cover;
+}
+  
+.listing-card-body, .card-body {
+  padding: 1.5rem;
+  color: rgb(87, 83, 83);
+}
+  
+.listing-card-body a, .card-body a  {
+  color: rgb(49, 124, 119);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+  
+.listing-card-body a:hover {
+  text-decoration: underline;
+}
+
+.listing-title, .card-title {
+  font-size: 1.5rem;
+}
+
+.listing-content a {
+  color: rgb(49, 124, 119);; 
+  padding: 0.313rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/*  Watchlist */
+.card-button {
+  margin-top: auto;
+  background-color: rgb(206, 78, 78);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.95rem;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover{
+  background-color: rgb(156, 44, 44);
+}
+
+/* Register & Login */
+.login-container, .register-container, .form-container {
+  max-width: 37.5rem;
+  margin: 6.25rem auto;
+  padding: 3.125rem;
+  background-color: rgb(198, 194, 190);
+  border: 1px solid rgb(198, 194, 190);
+  border-radius: 0.625rem;
+  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+  text-align: center;
+}
+  
+.login-title, .register-title, .form-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.875rem;
+  color: rgb(51, 51, 51);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+  
+.login-message, .register-message {
+  margin-bottom: 1rem;
+  color: rgb(177, 68, 68);
+}
+  
+.login-input, .register-input, .custom-input {
+  width: 100%;
+  padding: 0.785rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0.313rem;
+  border: 1px solid rgb(193, 189, 189);
+  font-size: 1rem;
+  outline: none;
+}
+
+.login-button, .register-button, .create-btn {
+  padding: 0.75rem 1.875rem;
+  font-size: 1.25rem;
+}
+
+.register-link, .login-link {
+  margin-top: 1.875rem;
+  font-size: 1.25rem;
+}
+  
+.register-link a, .login-link a {
+  color: rgb(23, 162, 184);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Forms */
+.form-box {
+  background:  rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 0.625rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 15px rgba(6, 6, 6, 0.1);
+  max-width: 37.5rem;
+  width: 100%;
+}
+
+.bid-box {
+  background:  rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 0.625rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 15px rgba(6, 6, 6, 0.1);
+}
+  
+.form-label {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: block;
+  font-size: 1.2rem;
+  color: rgb(51, 51, 51);
+}
+
+form label {
+  display: none !important;
+}
+
+form input[type="text"],
+form input[type="url"],
+form input[type="number"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Messages */
+.alert-msg {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgb(234, 238, 241);
+  border-left: 4px solid rgb(23, 162, 184);
+  font-size: 1.2rem;
+  color: rgb(23, 162, 184);
+  border-radius: 0.313rem;
+}
+  
+/* Comments */
+.comment-box {
+  width: 31.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid rgb(23, 162, 184);
+  border-radius: 0.313rem;
+  }
+  
+.comment-header {
+  font-size: 1.2rem;
+  margin-bottom: 0.1rem;
+  display: flex;
+  gap: 0.625rem;
+}
+  
+.comment-text {
+  justify-self: flex-start;
+  font-size: 1.2rem;
+  color: rgb(68, 68, 68);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 1.25rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}

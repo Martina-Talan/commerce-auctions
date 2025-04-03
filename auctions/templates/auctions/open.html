@@ -34,7 +34,9 @@
 {% if not listing.sold and user.is_authenticated and listing.listed_by != user %}
 <form action="{% url 'watchlistAdd' listing.id %}" method="post"> 
 {% csrf_token %}
-   <button type="submit" name="button" value="Watchlist" class="btn btn-primary btn-sm">Add to Watchlist</button>
+   <div class="form-group align-self-center">
+      <button type="submit" name="button" value="Watchlist" class="btn btn-info p-2 mt-1">Add to Watchlist</button>
+   </div>
 </form> 
 {% endif %}
          </div>
@@ -53,41 +55,46 @@
 
      
  
-{% if listing.listed_by != user and not listing.sold  and user.is_authenticated %}
-<form action="{% url 'bids' listing.id  %}" method="post">
-   {% csrf_token %} 
-   {% if bid_counter > 0 %}
+{% if listing.listed_by != user and not listing.sold and user.is_authenticated %}
+<form action="{% url 'bids' listing.id  %}" method="post" style="max-width: 600px; margin: 0 auto; text-align: center;" class="bid-box">
+    {% csrf_token %}
+    {% if bid_counter > 0 %}
+    <div class="form-group align-self-center">
+      <label class="form-label" for="bid">{{ bid_counter }} bid(s) so far. Please place your bid!</label>
+    </div>
+    {% else %}
+      <label class="form-label">There are no bids so far. Please place your bid!</label>
+    {% endif %}
+    {{ bid_form.as_p }}
+    <div class="form-group align-self-center">
+    <input class="btn btn-info p-2 mb-3" type="submit" value="Place a bid">
+    </div>
+  </form>
 
-   <label for="bid">{{ bid_counter }} bid(s) so far. Please place your bid!</label>
-   {% else %}
-      There are no bids so far. Please place your bid!
-   {% endif %}
-   {{ bid_form.as_p }}
-   <input class="btn btn-primary mb-3" type="submit" value="Place a bid">   
- </form>
-
-
-{% for message in messages %}
-   <div class="alert alert-primary mt-1" role="alert">{{ message}} </div>
-{% endfor %}
+  {% for message in messages %}
+    <div class="alert-msg">{{ message }}</div>
+  {% endfor %}
 {% endif %}
-
 
 {% if user.is_authenticated %}
-<form action="{% url 'comments' listing.id %}" method="post">
-   {% csrf_token %} 
-   {{ comment_form.as_p }}
-   <input class="btn btn-primary mb-2" type="submit" value="Add a comment">  
-</form> 
+  <form action="{% url 'comments' listing.id %}" method="post" class="form-box">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <div class="form-group align-self-center">
+      <input class="btn btn-info btn-m p-2" type="submit" value="Add a comment">
+    </div>
+  </form>
 {% endif %}
 
-
 {% for comment in comments %}
-   <div class="border border-primary p-2 m-2"><strong>{{ comment.user }}</strong> <small>{{ comment.timestamp }}</small>
-      <p>{{ comment.comment }} </p>
-   </div>
+  <div class="comment-box">
+    <div class="comment-header">
+      <strong>{{ comment.user }}</strong>
+      <p>{{ comment.timestamp }}</p>
+    </div>
+    <p class="comment-text">{{ comment.comment }}</p>
+  </div>
 {% endfor %}
-
 
 {% endblock %}
 
